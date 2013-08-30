@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.neal</groupId>
+  <artifactId>kids</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>kids</name>
+  <url>http://localhost/kids</url>
+  
+  <properties>
+  	<jetty.version>6.1.26</jetty.version>
+  	<jdk.version>1.6</jdk.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.tomcat</groupId>
+    	<artifactId>tomcat-servlet-api</artifactId>
+    	<version>7.0.39</version>
+    	<scope>compile</scope>
+    </dependency>
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
+		<version>1.8.3</version>
+	</dependency>
+
+  </dependencies>
+  <build>
+    <finalName>kids</finalName>
+    <plugins>
+		<plugin>
+	        <groupId>org.mortbay.jetty</groupId>
+	        <artifactId>maven-jetty-plugin</artifactId>
+	        <version>7.0.0.pre5</version>
+	        <configuration>
+	          <stopPort>9966</stopPort>
+	          <stopKey>foo</stopKey>
+	        </configuration>
+		</plugin>
+		<plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>3.0</version>
+	        <configuration>
+	            <source>${jdk.version}</source>
+	            <target>${jdk.version}</target>
+	            <memmax>512m</memmax>
+	        </configuration>
+    	</plugin>
+	</plugins>
+  </build>
+</project>
