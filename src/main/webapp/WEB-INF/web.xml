@@ -19,7 +19,15 @@
   		<param-value>user</param-value>
   	</init-param>
   </servlet>
-  
+	<!-- velocity test -->
+	<servlet>
+	  <servlet-name>velocity</servlet-name>
+	  <servlet-class>com.neal.mvc.velocity.SampleServlet</servlet-class>
+	  <init-param>
+	      <param-name>properties</param-name>
+	      <param-value>/velocity.properties</param-value>
+	  </init-param>
+	</servlet>
   <!-- global filter -->
   <filter>
   	<filter-name>filter</filter-name>

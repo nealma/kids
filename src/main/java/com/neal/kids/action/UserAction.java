@@ -4,6 +4,7 @@ import com.neal.kids.bean.User;
 import com.neal.kids.service.IUserService;
 import com.neal.kids.service.impl.UserService;
 import com.neal.mvc.request.RequestContext;
+import com.neal.mvc.velocity.VelocityFactory;
 
 
 public class UserAction{
@@ -11,12 +12,13 @@ public class UserAction{
 	IUserService userService = new UserService();
 
 	/**
-	 * curl http://localhost:8080/kids/action/user/createUser?name=neal
+	 * curl -i http://localhost:8080/kids/action/user/createUser?name=neal
 	 */
 	public void createUser(){
 		System.out.println("run createUser ");
 		User user = RequestContext.get().form(User.class);
 		System.out.println("name="+user.getName());
+		VelocityFactory.init();
 	}
 
 	public void modifyUser(){
@@ -27,7 +29,7 @@ public class UserAction{
 		System.out.println("run eraseUser");
 	}
 	/**
-	 * curl http://192.168.1.6:8080/kids/action/user/getuser
+	 * curl -i http://localhost:8080/kids/action/user/getuser
 	 */
 	public void getUsers(){
 		userService.getUsers();
