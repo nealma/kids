@@ -23,7 +23,7 @@ public class UserAction{
 		System.out.println("run eraseUser");
 	}
 	/**
-	 * curl http://192.168.1.6:8080/kids/action/user/getUser/2
+	 * curl http://localhost:8080/kids/action/user/getUser?id=2
 	 */
 	public void getUser(){
 		RequestContext.get();
