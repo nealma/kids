@@ -20,6 +20,20 @@
   	</init-param>
   </servlet>
   
+  <servlet>
+        <servlet-name>customerVelocityServlet</servlet-name>
+        <servlet-class>com.velocity.servlet.CustomerVelocityServlet</servlet-class>
+         <!-- 加载自定义的velocity.propeties  -->
+        <init-param>
+            <param-name>org.apache.velocity.properties</param-name>
+            <param-value>/WEB-INF/classes/velocity.properties</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>customerVelocityServlet</servlet-name>
+        <url-pattern>/customerVelocityServlet</url-pattern>
+    </servlet-mapping>
+  
   <!-- global filter -->
   <filter>
   	<filter-name>filter</filter-name>
