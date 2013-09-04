@@ -10,11 +10,11 @@ public class VelocityFactory {
 	public static void init(){
 		System.out.println("current path:"+ VelocityFactory.class.getResource(".").getPath());
 		System.out.println("home path:"+System.getProperty("user.dir"));
-		Velocity.init("target/classes/velocity.properties");
+		Velocity.init("target/work/webapp/WEB-INF/classes/velocity.properties");
 		VelocityContext velocityContext = new VelocityContext();
 		velocityContext.put("key", "value");
 		Template template = null;
-			
+		
 		template = Velocity.getTemplate(System.getProperty("user.dir")+"/target/work/webapp/WEB-INF/vm_template/mytemplate.vm");
 		
 		StringWriter sw = new StringWriter();
