@@ -1,4 +1,4 @@
-kids
-====
+幼儿读物
+========
 
-share the happiness of our kids.
+整理K12阶段所涉及到的国学内容，给孩子日常学习用。
